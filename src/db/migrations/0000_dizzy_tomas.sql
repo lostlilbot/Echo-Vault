@@ -20,6 +20,7 @@ CREATE TABLE `memories` (
 CREATE TABLE `tag_assignments` (
 	`tag_id` integer NOT NULL,
 	`memory_id` integer NOT NULL,
+	PRIMARY KEY(`tag_id`, `memory_id`),
 	FOREIGN KEY (`tag_id`) REFERENCES `tags`(`id`) ON UPDATE no action ON DELETE cascade,
 	FOREIGN KEY (`memory_id`) REFERENCES `memories`(`id`) ON UPDATE no action ON DELETE cascade
 );

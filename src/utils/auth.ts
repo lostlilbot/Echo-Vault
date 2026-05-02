@@ -38,4 +38,3 @@ export function verifyToken(token: string): { userId: number; email: string } {
     throw new Error("Invalid or expired token");
   }
 }
-}

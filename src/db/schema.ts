@@ -1,4 +1,4 @@
-import { sqliteTable, text, integer, index } from "drizzle-orm/sqlite-core";
+import { sqliteTable, text, integer, index, primaryKey } from "drizzle-orm/sqlite-core";
 
 export const users = sqliteTable("users", {
   id: integer("id").primaryKey({ autoIncrement: true }),
@@ -40,6 +40,6 @@ index("tags_name_idx").on(tags.name);
 export const tagAssignments = sqliteTable("tag_assignments", {
   tagId: integer("tag_id").notNull().references(() => tags.id, { onDelete: "cascade" }),
   memoryId: integer("memory_id").notNull().references(() => memories.id, { onDelete: "cascade" }),
-}, (table) => ({
-  primaryKey: { columns: [table.tagId, table.memoryId] },
-}));
+}, (table) => [
+  primaryKey({ columns: [table.tagId, table.memoryId] }),
+]);

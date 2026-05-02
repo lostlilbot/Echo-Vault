@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "bdf1359e-8253-4528-b652-16e77a615d7b",
+  "id": "bf67fee3-66e2-46d7-aa56-a8e5852b6ef4",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "echoes": {
@@ -176,7 +176,15 @@
           "onUpdate": "no action"
         }
       },
-      "compositePrimaryKeys": {},
+      "compositePrimaryKeys": {
+        "tag_assignments_tag_id_memory_id_pk": {
+          "columns": [
+            "tag_id",
+            "memory_id"
+          ],
+          "name": "tag_assignments_tag_id_memory_id_pk"
+        }
+      },
       "uniqueConstraints": {},
       "checkConstraints": {}
     },
