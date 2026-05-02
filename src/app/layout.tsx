@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js Template",
-  description: "A minimal Next.js starter template",
+  title: "EchoVault",
+  description: "Store, reflect, and synthesize your memories with free local AI",
 };
 
 export default function RootLayout({
